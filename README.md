@@ -200,7 +200,7 @@ const profile = {
 ## <img src="https://media.giphy.com/media/huyZxIJvtqVeRp7QcS/giphy.gif" width="30"> Connect With Me
 
 <div align="center">
-  <a href="https://linkedin.com/in/kaviya" target="https://www.linkedin.com/in/kavindu-sahan-silva/">
+  <a href="https://linkedin.com/in/kavindu-sahan-silva/" target="https://www.linkedin.com/in/kavindu-sahan-silva/">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="https://twitter.com/kaviya" target="_blank">
