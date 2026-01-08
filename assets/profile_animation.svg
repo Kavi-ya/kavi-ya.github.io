@@ -1,0 +1,142 @@
+<svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Matrix-style gradient -->
+    <linearGradient id="matrixGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000" />
+      <stop offset="100%" stop-color="#0D1117" />
+    </linearGradient>
+    
+    <!-- Subtle glow effects -->
+    <filter id="subtleGlow">
+      <feGaussianBlur stdDeviation="1" result="blur" />
+      <feFlood flood-color="#00eeff" flood-opacity="0.3" result="glow" />
+      <feComposite in="glow" in2="blur" operator="in" result="softGlow" />
+      <feComposite in="softGlow" in2="SourceGraphic" operator="over" />
+    </filter>
+
+    <!-- Matrix Rain Pattern -->
+    <pattern id="MatrixPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <g fill="#0f0" font-family="monospace" font-size="14" opacity="0.3">
+        <text x="0" y="20">1<animate attributeName="y" from="-20" to="200" dur="3s" repeatCount="indefinite"/></text>
+        <text x="20" y="40">0<animate attributeName="y" from="-40" to="200" dur="2.5s" repeatCount="indefinite"/></text>
+        <text x="40" y="60">1<animate attributeName="y" from="-60" to="200" dur="3.2s" repeatCount="indefinite"/></text>
+        <text x="60" y="80">0<animate attributeName="y" from="-80" to="200" dur="2.8s" repeatCount="indefinite"/></text>
+        <text x="80" y="100">1<animate attributeName="y" from="-100" to="200" dur="3.5s" repeatCount="indefinite"/></text>
+      </g>
+    </pattern>
+
+    <!-- Circuit Pattern -->
+    <pattern id="circuitPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M10,10 L90,10 M50,10 L50,90 M10,50 L90,50 M10,90 L90,90" 
+            stroke="#00eeff" stroke-width="0.5" fill="none" opacity="0.2"/>
+      <circle cx="50" cy="50" r="3" fill="#00eeff" opacity="0.3"/>
+    </pattern>
+
+    <!-- Scanline effect -->
+    <pattern id="scanlines" width="800" height="4" patternUnits="userSpaceOnUse">
+      <rect width="800" height="1" fill="#ffffff" fill-opacity="0.05" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <g>
+    <rect width="100%" height="100%" rx="10" ry="10" fill="url(#matrixGradient)"/>
+    
+    <!-- Circuit pattern -->
+    <rect width="100%" height="100%" rx="10" ry="10" fill="url(#circuitPattern)" opacity="0">
+      <animate attributeName="opacity" values="0;0.2" begin="7s" dur="1s" fill="freeze"/>
+    </rect>
+    
+    <!-- Matrix rain -->
+    <rect width="100%" height="100%" rx="10" ry="10" fill="url(#MatrixPattern)" opacity="0">
+      <animate attributeName="opacity" values="0;0.3" begin="7s" dur="1s" fill="freeze"/>
+    </rect>
+
+    <!-- Scanlines -->
+    <rect width="100%" height="100%" rx="10" ry="10" fill="url(#scanlines)" opacity="0.3">
+      <animate attributeName="y" from="-200" to="200" dur="10s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Terminal Part -->
+  <g id="terminal-part">
+    <!-- Command prompt -->
+    <text x="20" y="40" font-family="monospace" font-size="14" fill="#0f0">Kavi-ya@github:~$</text>
+    <text x="190" y="40" font-family="monospace" font-size="14" fill="#f8f8f2">sudo access --profile developer_mode</text>
+    
+    <!-- Loading message -->
+    <text x="20" y="70" font-family="monospace" font-size="16" fill="#00eeff" font-weight="bold">Initializing Developer Profile...</text>
+    
+    <!-- Progress bar -->
+    <rect x="20" y="90" width="760" height="20" rx="3" ry="3" fill="#1E2029"/>
+    <rect x="20" y="90" width="0" height="20" rx="3" ry="3" fill="#0f0">
+      <animate attributeName="width" values="0;760" dur="3s" fill="freeze"/>
+    </rect>
+    
+    <!-- Status messages -->
+    <text x="20" y="130" font-family="monospace" font-size="12" fill="#00eeff" opacity="0">
+      <tspan x="20" dy="0">$ LOADING DEVELOPMENT ENVIRONMENT...</tspan>
+      <animate attributeName="opacity" values="0;1" begin="0.5s" dur="0.3s" fill="freeze"/>
+    </text>
+    
+    <text x="20" y="150" font-family="monospace" font-size="12" fill="#00eeff" opacity="0">
+      <tspan x="20" dy="0">$ INITIALIZING CODE REPOSITORIES...</tspan>
+      <animate attributeName="opacity" values="0;1" begin="1.2s" dur="0.3s" fill="freeze"/>
+    </text>
+    
+    <text x="20" y="170" font-family="monospace" font-size="12" fill="#00eeff" opacity="0">
+      <tspan x="20" dy="0">$ SYNCING GITHUB PROFILE...</tspan>
+      <animate attributeName="opacity" values="0;1" begin="1.9s" dur="0.3s" fill="freeze"/>
+    </text>
+    
+    <!-- Progress percentage -->
+    <text x="740" y="104" font-family="monospace" font-size="12" fill="#f8f8f2" text-anchor="end">
+      <animate attributeName="textContent" values="0%;10%;20%;30%;40%;50%;60%;70%;80%;90%;100%" dur="3s" fill="freeze"/>
+    </text>
+
+    <!-- Fade out -->
+    <animate attributeName="opacity" values="1;0" begin="3s" dur="0.3s" fill="freeze"/>
+  </g>
+
+  <!-- Welcome Part -->
+  <g id="welcome-part" opacity="0">
+    <!-- Main text -->
+    <text x="400" y="100" font-family="monospace" font-size="38" text-anchor="middle" fill="#ffffff" filter="url(#subtleGlow)">
+      ACCESS GRANTED
+      <animate attributeName="opacity" values="1;0.95;1" dur="2s" begin="3.5s" repeatCount="indefinite"/>
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="400" y="140" font-family="monospace" font-size="18" text-anchor="middle" fill="#00eeff" opacity="0">
+      DEVELOPER PROFILE ACTIVATED
+      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="4s" fill="freeze"/>
+    </text>
+    
+    <!-- Animation timing -->
+    <animate attributeName="opacity" values="0;1" begin="3.3s" dur="0.3s" fill="freeze"/>
+    <animate attributeName="opacity" values="1;0" begin="6.5s" dur="0.5s" fill="freeze"/>
+  </g>
+
+  <!-- Profile Part -->
+  <g id="profile-part" opacity="0">
+    <!-- Border -->
+    <rect x="150" y="50" width="500" height="120" fill="none" stroke="#00eeff" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;1" begin="7s" dur="1s" fill="freeze"/>
+      <animate attributeName="stroke-dasharray" values="0,1500;1500,0" dur="3s" begin="7s" fill="freeze"/>
+    </rect>
+
+    <!-- Name -->
+    <text x="400" y="100" font-family="monospace" font-size="30" font-weight="bold" text-anchor="middle" fill="#ffffff" filter="url(#subtleGlow)" opacity="0">
+      KAVI-YA
+      <animate attributeName="opacity" values="0;1" dur="1.2s" begin="7.2s" fill="freeze"/>
+    </text>
+    
+    <!-- Title -->
+    <text x="400" y="140" font-family="monospace" font-size="18" text-anchor="middle" fill="#00eeff" opacity="0">
+    Cyber Security Student
+      <animate attributeName="opacity" values="0;1" dur="1.2s" begin="7.6s" fill="freeze"/>
+    </text>
+
+    <animate attributeName="opacity" values="0;1" begin="7s" dur="1s" fill="freeze"/>
+  </g>
+</svg>
