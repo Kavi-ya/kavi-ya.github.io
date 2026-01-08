@@ -7,6 +7,7 @@ import TitleAnimation from "./components/TitleAnimation";
 import CustomCursor from "./components/CustomCursor";
 import CustomContextMenu from "./components/CustomContextMenu";
 import ServiceWorkerRegister from "./components/ServiceWorkerRegister";
+import StylesheetLoader from "./components/StylesheetLoader";
 import dynamic from "next/dynamic";
 
 // Lazy load heavy animation components
@@ -48,14 +49,6 @@ export default function RootLayout({
         {/* Preconnect to critical origins */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* Font Awesome - deferred loading to reduce render blocking */}
-        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onLoad={(e) => {if(e.target) (e.target as any).rel = 'stylesheet'}} />
-        <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" /></noscript>
-        
-        {/* AOS CSS - deferred loading */}
-        <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onLoad={(e) => {if(e.target) (e.target as any).onload = null; (e.target as any).rel = 'stylesheet'}} />
-        <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" /></noscript>
       </head>
       <body className={inter.className}>
         <TitleAnimation />
@@ -65,6 +58,7 @@ export default function RootLayout({
         <CyberBackgroundDynamic />
         <CustomCursor />
         <CustomContextMenu />
+        <StylesheetLoader />
         {children}
         <ServiceWorkerRegister />
       </body>
