@@ -1,7 +1,5 @@
 const nextConfig = {
   output: 'export',
-  basePath: '/Kavi-ya',
-  assetPrefix: '/Kavi-ya',
   images: {
     unoptimized: true,
   },
