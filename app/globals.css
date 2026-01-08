@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font metrics override to prevent layout shift (CLS) */
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter Var'), local('InterVar');
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 22.43%;
+  line-gap-override: 0%;
+}
+
 :root {
     /* Dark Theme Colors (default for cyber security) */
     --background-color: #0a0a0a;

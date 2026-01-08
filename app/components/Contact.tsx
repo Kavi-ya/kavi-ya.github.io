@@ -133,7 +133,7 @@ export default function Contact() {
               <i className="fas fa-phone"></i>
               <div>
                 <h3>Phone</h3>
-                <p>+94 XXX XXX XXX</p>
+                <p>+94 701 296 488</p>
               </div>
             </div>
 

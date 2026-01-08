@@ -11,28 +11,28 @@ export default function Projects() {
       title: 'Network Vulnerability Scanner',
       description: 'A Python-based tool for identifying open ports and potential vulnerabilities in network infrastructure.',
       tech: ['Python', 'Scapy', 'Network Security'],
-      img: 'https://images.unsplash.com/photo-1544890225-2f3faec4cd60?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'
+      img: 'https://images.unsplash.com/photo-1544890225-2f3faec4cd60?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=75&fm=webp'
     },
     {
       category: 'web',
       title: 'XSS Vulnerability Detector',
       description: 'A web application security tool that detects cross-site scripting vulnerabilities in web forms.',
       tech: ['JavaScript', 'Node.js', 'Web Security'],
-      img: 'https://images.unsplash.com/photo-1545987796-200677ee1011?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'
+      img: 'https://images.unsplash.com/photo-1545987796-200677ee1011?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=75&fm=webp'
     },
     {
       category: 'crypto',
       title: 'File Encryption Utility',
       description: 'A secure file encryption and decryption tool using AES-256 with a user-friendly interface.',
       tech: ['Java', 'Cryptography', 'AES'],
-      img: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'
+      img: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=75&fm=webp'
     },
     {
       category: 'network',
       title: 'Network Packet Analyzer',
       description: 'A tool for capturing and analyzing network traffic to identify suspicious patterns and potential intrusions.',
       tech: ['Python', 'Pcap', 'Network Analysis'],
-      img: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'
+      img: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=75&fm=webp'
     }
   ];
 
@@ -52,7 +52,12 @@ export default function Projects() {
           {filteredProjects.map((project, index) => (
             <div key={index} className="project-item" data-category={project.category} data-aos="flip-up" data-aos-delay={300 + index * 100}>
               <div className="project-img">
-                <img src={project.img} alt={project.title} />
+                <img 
+                  src={project.img} 
+                  alt={project.title}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div className="project-info">
                 <h3>{project.title}</h3>
