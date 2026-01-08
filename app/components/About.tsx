@@ -45,7 +45,7 @@ export default function About() {
               </div>
             </div>
             <div className="download-resume">
-              <a href="resume.pdf" className="btn primary" download>
+              <a href="KavinduSahan_CV.pdf" className="btn primary" download>
                 <i className="fas fa-file-download"></i> Download Full Resume
               </a>
             </div>

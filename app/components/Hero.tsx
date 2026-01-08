@@ -138,7 +138,7 @@ export default function Hero() {
           <p>Securing the digital world, one byte at a time</p>
           <div className="cta-buttons">
 
-            <a href="resume.pdf" className="btn secondary" download>Download CV</a>
+            <a href="KavinduSahan_CV.pdf" className="btn secondary" download>Download CV</a>
           </div>
           <div className="live-date">
             <div className="cyber-badge">
